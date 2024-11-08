@@ -89,3 +89,7 @@ class Ball(Basic):
         # ============================================
         # TODO: Implement a service that returns whether the ball is alive or not
         pass
+
+        # 공 놓침
+        if self.rect.centery > 800:
+            return False
