@@ -34,6 +34,8 @@ class Block(Basic):
         pygame.draw.rect(surface, self.color, self.rect)
     
     def collide(self):
+        # 죽어라!!
+
         self.alive = False
        
 
@@ -69,6 +71,7 @@ class Ball(Basic):
         for x in blocks:
             if x.rect.colliderect(self.rect):
                 Block.collide(x)
+                blocks.remove(x)
                 self.dir *= -1
  
 
