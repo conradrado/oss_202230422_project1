@@ -16,7 +16,7 @@ paddle = Paddle()
 ball1 = Ball()
 BLOCKS = []
 ITEMS = []
-BALLS = [ball1]
+BALLS = []
 life = config.life
 start = False
 

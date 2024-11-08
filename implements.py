@@ -34,7 +34,6 @@ class Block(Basic):
         pygame.draw.rect(surface, self.color, self.rect)
     
     def collide(self):
-        self.dir *= -1
         self.alive = False
        
 
@@ -66,9 +65,12 @@ class Ball(Basic):
         pygame.draw.ellipse(surface, self.color, self.rect)
 
     def collide_block(self, blocks: list):
-        
-        
-        pass
+        # 공이 블록을 부딪혔는가?
+        for x in blocks:
+            if x.rect.colliderect(self.rect):
+                Block.collide(x)
+                self.dir *= -1
+ 
 
     def collide_paddle(self, paddle: Paddle) -> None:
         if self.rect.colliderect(paddle.rect):
